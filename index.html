@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bishop | Personal Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .profile-header {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #6B73FF 0%, #000DFF 100%);
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            border: 6px solid #f8f9fa;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+        }
+
+        .name {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nickname {
+            font-size: 1.3rem;
+            color: #6c757d;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .title {
+            font-size: 1.4rem;
+            color: #495057;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .bio {
+            font-size: 1.1rem;
+            color: #6c757d;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: #6c757d;
+            line-height: 1.7;
+        }
+
+        .software-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .software-list li {
+            background: #f8f9fa;
+            padding: 0.8rem 1.2rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            font-weight: 500;
+            color: #495057;
+        }
+
+        .software-list li a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .software-list li a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .contact-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .profile-header {
+                padding: 2rem;
+            }
+
+            .name {
+                font-size: 2.2rem;
+            }
+
+            .card {
+                padding: 2rem;
+            }
+
+            .contact-section {
+                padding: 2rem;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <img src="https://media.licdn.com/dms/image/v2/C4E03AQEp2jHbX4FATw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1546617949564?e=1755734400&v=beta&t=LmA5ixbmREqTGGy_r44ArzouZKeLfZF7LXl9-7wo8Hg" alt="Bishop" class="profile-image">
+            <h1 class="name">Justin Rolston</h1>
+            <p class="nickname">"The Bishop"</p>
+            <p class="title">Senior Software Engineering Manager & Elder</p>
+            <p class="bio">
+                Welcome to my digital space! Known by friends and colleagues as "Bishop," I'm passionate about serving God through technology, leading engineering teams, and building software that makes a difference. I'm an elder committed to shepherding God's people and using my technical gifts for His glory.
+            </p>
+        </div>
+
+        <!-- Content Grid -->
+        <div class="content-grid">
+            <!-- About Me -->
+            <div class="card">
+                <div class="card-icon">✝️</div>
+                <h3>About Me</h3>
+                <p>
+                    I'm a Senior Software Engineering Manager with a heart for serving God and His people. As an elder, I'm called to shepherd and care for the church, while professionally I lead engineering teams to build impactful software solutions. The nickname "Bishop" reflects both my leadership role and my commitment to serving others. I believe technology is a gift from God that can be used to advance His kingdom and serve His people.
+                </p>
+            </div>
+
+            <!-- Ministry & Software -->
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <h3>Ministry Through Technology</h3>
+                <p>
+                    Recent projects that combine my faith and technical skills:
+                </p>
+                <ul class="software-list">
+                    <li><a href="https://inhisname.company/pages/daily-passage" target="_blank">Daily Passage</a> - Scripture & Gospel Sharing Platform</li>
+                    <li>Church Management Systems</li>
+                    <li>Biblical Study Tools & Applications</li>
+                    <li>Community Outreach Platforms</li>
+                </ul>
+            </div>
+
+            <!-- Leadership & Expertise -->
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3>Leadership & Expertise</h3>
+                <p>
+                    As a Senior Software Engineering Manager, I focus on building high-performing teams, architectural decision-making, and delivering complex software solutions. My experience spans team leadership, system design, and full-stack development. I'm passionate about mentoring engineers and creating environments where both people and technology flourish.
+                </p>
+            </div>
+
+            <!-- Interests & Passions -->
+            <div class="card">
+                <div class="card-icon">🏈</div>
+                <h3>Interests & Passions</h3>
+                <p>
+                    Beyond software engineering, I'm deeply passionate about theology and studying God's Word. I love discussing the intersection of faith and technology. When I'm not coding or studying scripture, you'll find me cheering on the Ohio State Buckeyes! Go Bucks! I also enjoy mentoring young engineers and serving in various church ministries.
+                </p>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h2>Let's Connect</h2>
+            <p>
+                Interested in discussing theology, technology, Ohio State football, or potential collaborations? I'd love to connect!
+            </p>
+            <div class="social-links">
+                <a href="mailto:bishop@rolstons.com" class="social-link">📧 Email</a>
+                <a href="https://github.com/bishop" class="social-link">💻 GitHub</a>
+                <a href="https://linkedin.com/in/justinrolston" class="social-link">💼 LinkedIn</a>
+                <a href="https://inhisname.company" class="social-link">✝️ Ministry Work</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2025 Justin "Bishop" Rolston | Part of the Rolstons.com Network</p>
+        </div>
+    </div>
+</body>
+</html>
