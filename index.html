@@ -278,6 +278,7 @@
                         Recent projects that combine my faith and technical skills:
                     </p>
                     <ul class="software-list">
+                        <li><a href="https://heartafla.me/" target="_blank">Heart Aflame</a> — Daily Biblical Devotions</li>
                         <li><a href="https://inhisname.company/pages/daily-passage" target="_blank">Daily Passage</a> — Scripture & Gospel Sharing Platform</li>
                         <li><a href="https://everydayprayerlife.com/" target="_blank">Everyday Prayer Life</a> — Prayer Organization & Sharing Platform</li>
                         <li><a href="https://justinrolston.github.io/bible-quiz-app/" target="_blank">Bible Quiz App</a> — Interactive Scripture Learning Tool</li>
@@ -326,8 +327,11 @@
     <!-- Footer -->
     <div class="footer">
         <div class="container">
-            <p>&copy; 2025 "The Bishop"</p>
+            <p>&copy; <span id="year"></span> "The Bishop"</p>
         </div>
     </div>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
