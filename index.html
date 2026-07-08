@@ -364,8 +364,43 @@
 
         /* Wide card (spans full row on large screens) */
         .card--wide { grid-column: 1 / -1; }
+        .wide-grid {
+            display: grid;
+            gap: 1.75rem 2.5rem;
+            grid-template-columns: 1fr;
+        }
+        .wide-grid > div p { margin-top: 0; }
+
+        .client {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-left: 3px solid var(--gold);
+            padding: 1.4rem 1.55rem;
+        }
+        .client a {
+            display: inline-block;
+            font-family: var(--serif);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--ink);
+            text-decoration: none;
+            margin: 0.55rem 0 0.45rem;
+            transition: color 0.2s ease;
+        }
+        .client a:hover { color: var(--gold); }
+        .client__meta {
+            display: block;
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
         @media (min-width: 900px) {
             .grid { grid-template-columns: repeat(2, 1fr); }
+            .wide-grid {
+                grid-template-columns: 1.15fr 0.85fr;
+                align-items: center;
+            }
         }
 
         /* ---------- Contact ---------- */
@@ -567,6 +602,27 @@
                         mentor to young engineers, and &mdash; when fall rolls around &mdash; a loud and unwavering fan
                         of the Ohio State Buckeyes. Go Bucks!
                     </p>
+                </article>
+
+                <!-- V — Web Design & Management -->
+                <article class="card card--wide reveal d5">
+                    <span class="card__num">V</span>
+                    <div class="wide-grid">
+                        <div>
+                            <h3>Web Design &amp; Management</h3>
+                            <p>
+                                Beyond my own projects, I design, build, and manage websites for small
+                                businesses and organizations &mdash; taking a site from the first mockup
+                                through launch, hosting, and the ongoing updates that keep it working long
+                                after it ships.
+                            </p>
+                        </div>
+                        <aside class="client">
+                            <span class="featured">Client Site</span>
+                            <a href="https://coopshandymanservices.com/" target="_blank" rel="noopener">Coop&rsquo;s Handyman Services</a>
+                            <span class="client__meta">Full-service handyman in Ohio &mdash; site design, build, and ongoing management.</span>
+                        </aside>
+                    </div>
                 </article>
 
             </div>
